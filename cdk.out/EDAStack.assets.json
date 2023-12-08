@@ -1,0 +1,62 @@
+{
+  "version": "32.0.0",
+  "files": {
+    "a657308e723bb9460b800cb3b47dadb74e28243edfe246bf7755c45ec312eb97": {
+      "source": {
+        "path": "asset.a657308e723bb9460b800cb3b47dadb74e28243edfe246bf7755c45ec312eb97",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-eu-west-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1",
+          "objectKey": "a657308e723bb9460b800cb3b47dadb74e28243edfe246bf7755c45ec312eb97.zip",
+          "region": "eu-west-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-west-1"
+        }
+      }
+    },
+    "1de1a8a7b24a6fa970cdb185ac04dccb7417db108a940e411f5a0c6fde76e057": {
+      "source": {
+        "path": "C:\\Users\\adamo\\OneDrive\\Desktop\\College\\Semester-7\\Distributed Systems\\lab12\\eda-lab",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-eu-west-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1",
+          "objectKey": "1de1a8a7b24a6fa970cdb185ac04dccb7417db108a940e411f5a0c6fde76e057.zip",
+          "region": "eu-west-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-west-1"
+        }
+      }
+    },
+    "354ce73a62a013efbe5f76c0e9ab42d5f065035350aec3ebbab416e5fd9825f5": {
+      "source": {
+        "path": "C:\\Users\\adamo\\OneDrive\\Desktop\\College\\Semester-7\\Distributed Systems\\lab12\\eda-lab",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-eu-west-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1",
+          "objectKey": "354ce73a62a013efbe5f76c0e9ab42d5f065035350aec3ebbab416e5fd9825f5.zip",
+          "region": "eu-west-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-west-1"
+        }
+      }
+    },
+    "1eb09d335cba9b3847a96462cd3760272c4007b1e8b7200dce67b32344fe83db": {
+      "source": {
+        "path": "EDAStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-eu-west-1": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1",
+          "objectKey": "1eb09d335cba9b3847a96462cd3760272c4007b1e8b7200dce67b32344fe83db.json",
+          "region": "eu-west-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-eu-west-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
