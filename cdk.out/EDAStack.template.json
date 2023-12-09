@@ -486,7 +486,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1"
      },
-     "S3Key": "aaddab8a69441b4da596efbbbc05d5923700f181dcc4d185e32ed14c3d69dcf4.zip"
+     "S3Key": "33d616f3147b1e95dc24173abb23f7b82f46bae6d40326afa089c4771d9ab9ab.zip"
     },
     "Environment": {
      "Variables": {
@@ -510,7 +510,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "EDAStack/ProcessImageFn/Resource",
-    "aws:asset:path": "asset.aaddab8a69441b4da596efbbbc05d5923700f181dcc4d185e32ed14c3d69dcf4",
+    "aws:asset:path": "asset.33d616f3147b1e95dc24173abb23f7b82f46bae6d40326afa089c4771d9ab9ab",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
