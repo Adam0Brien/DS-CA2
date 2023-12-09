@@ -486,7 +486,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1"
      },
-     "S3Key": "1de1a8a7b24a6fa970cdb185ac04dccb7417db108a940e411f5a0c6fde76e057.zip"
+     "S3Key": "aaddab8a69441b4da596efbbbc05d5923700f181dcc4d185e32ed14c3d69dcf4.zip"
     },
     "Environment": {
      "Variables": {
@@ -510,7 +510,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "EDAStack/ProcessImageFn/Resource",
-    "aws:asset:path": "C:\\Users\\adamo\\OneDrive\\Desktop\\College\\Semester-7\\Distributed Systems\\lab12\\eda-lab",
+    "aws:asset:path": "asset.aaddab8a69441b4da596efbbbc05d5923700f181dcc4d185e32ed14c3d69dcf4",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -619,7 +619,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-eu-west-1"
      },
-     "S3Key": "354ce73a62a013efbe5f76c0e9ab42d5f065035350aec3ebbab416e5fd9825f5.zip"
+     "S3Key": "20c9992db4bb7dde1b69f3a0e6456841ea0926b67b687b0e37466023254de483.zip"
     },
     "Environment": {
      "Variables": {
@@ -643,7 +643,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "EDAStack/mailer-function/Resource",
-    "aws:asset:path": "C:\\Users\\adamo\\OneDrive\\Desktop\\College\\Semester-7\\Distributed Systems\\lab12\\eda-lab",
+    "aws:asset:path": "asset.20c9992db4bb7dde1b69f3a0e6456841ea0926b67b687b0e37466023254de483",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
