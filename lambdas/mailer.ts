@@ -34,6 +34,10 @@ export const handler: SQSHandler = async (event: any) => {
         const srcBucket = s3e.bucket.name;
         // Object key may have spaces or unicode non-ASCII characters.
         const srcKey = decodeURIComponent(s3e.object.key.replace(/\+/g, " "));
+        
+        const fileType = srcKey.split('.').pop()?.toLowerCase();
+        
+        if (fileType === "jpeg" || fileType === "png") {
         try {
           const { name, email, message }: ContactDetails = {
             name: "The Photo Album",
@@ -46,7 +50,21 @@ export const handler: SQSHandler = async (event: any) => {
           console.log("ERROR is: ", error);
           // return;
         }
+      } else {
+        try {
+          const { name, email, message }: ContactDetails = {
+            name: "The Photo Album",
+            email: SES_EMAIL_FROM,
+            message: `Image ${srcKey} has been rejected because of an invalid file type`,
+          };
+          const params = sendEmailParams({ name, email, message });
+          await client.send(new SendEmailCommand(params));
+        } catch (error: unknown) {
+          console.log("ERROR is: ", error);
+          // return;
+        }
       }
+    }
     }
   }
 };
