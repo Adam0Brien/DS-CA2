@@ -8,10 +8,9 @@ import {
   S3Client,
   PutObjectCommand,
 } from "@aws-sdk/client-s3";
-
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb";
-import { SES_REGION, TABLE_NAME } from "../../env";
+
 
 const s3 = new S3Client();
 const ddbDocClient = createDDbDocClient();
@@ -19,10 +18,16 @@ const ddbDocClient = createDDbDocClient();
 export const handler: SQSHandler = async (event) => {
   console.log("Event ", event);
   for (const record of event.Records) {
+
     const recordBody = JSON.parse(record.body);
     console.log('Raw SNS message ',JSON.stringify(recordBody))
-    if (recordBody.Records) {
-      for (const messageRecord of recordBody.Records) {
+
+    const recordMessage = JSON.parse(recordBody.Message);
+    console.log('SNS Message: ', recordMessage)
+
+    if (recordMessage.Records) {
+      for (const messageRecord of recordMessage.Records) {
+        
         const s3e = messageRecord.s3;
         const srcBucket = s3e.bucket.name;
         // Object key may have spaces or unicode non-ASCII characters.
@@ -40,21 +45,23 @@ export const handler: SQSHandler = async (event) => {
           throw new Error(`Unsupported image type: ${imageType}`);
         }
 
-        await ddbDocClient.send(
+        const dynamodbUpload = await ddbDocClient.send(
           new PutCommand({
-            TableName: TABLE_NAME,
+            TableName: "Images",
             Item: {
-              imageName: srcKey,
+              "ImageName": srcKey
             },
           })
         );
+
+        console.log("Response: ", dynamodbUpload)
       }
     }
   }
 };
 
 function createDDbDocClient() {
-  const ddbClient = new DynamoDBClient({ region: SES_REGION });
+  const ddbClient = new DynamoDBClient({ region: process.env.REGION });
   const marshallOptions = {
     convertEmptyValues: true,
     removeUndefinedValues: true,
